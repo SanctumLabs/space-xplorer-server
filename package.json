@@ -7,14 +7,50 @@
   "repository": "git@github.com:Wyvarn/space-xplorer-server.git",
   "author": "BrianLusina <12752833+BrianLusina@users.noreply.github.com>",
   "license": "MIT",
-  "scripts": {
-
-  },
+  "scripts": {},
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
       "pre-push": "npm test",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^9.1.1",
+    "@commitlint/config-conventional": "^9.1.1",
+    "@types/jest": "^26.0.8",
+    "@types/node": "^14.0.27",
+    "@typescript-eslint/eslint-plugin": "^3.8.0",
+    "@typescript-eslint/parser": "^3.8.0",
+    "apollo-link": "^1.2.14",
+    "apollo-link-http": "^1.5.17",
+    "apollo-server-testing": "^2.16.1",
+    "dotenv": "^8.2.0",
+    "eslint": "^7.6.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "husky": "^4.2.5",
+    "jest": "^26.2.2",
+    "lint-staged": "^10.2.11",
+    "nock": "^13.0.3",
+    "node-fetch": "^2.6.0",
+    "nodemon": "^2.0.4",
+    "now": "^19.2.0",
+    "prettier": "^2.0.5",
+    "ts-loader": "^8.0.2",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.7"
+  },
+  "dependencies": {
+    "apollo-datasource": "^0.7.2",
+    "apollo-datasource-rest": "^0.9.3",
+    "apollo-server": "^2.16.1",
+    "aws-sdk": "^2.726.0",
+    "graphql": "^15.3.0",
+    "isemail": "^3.2.0",
+    "mime": "^2.4.6",
+    "sequelize": "^6.3.4",
+    "uuid": "^8.3.0",
+    "winston": "^3.3.3"
   }
 }
