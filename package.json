@@ -7,7 +7,14 @@
   "repository": "git@github.com:Wyvarn/space-xplorer-server.git",
   "author": "BrianLusina <12752833+BrianLusina@users.noreply.github.com>",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "start": "npm-run-all --parallel watch:build watch:server",
+    "serve": "node build/server.js",
+    "lint": "eslint 'src/*/**/*.{js,ts,tsx}'",
+    "lint:fix": "eslint 'src/*/**/*.{js,ts,tsx}' --fix",    
+    "watch:build": "webpack --watch",
+    "watch:server": "nodemon"
+  },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
@@ -36,10 +43,15 @@
     "node-fetch": "^2.6.0",
     "nodemon": "^2.0.4",
     "now": "^19.2.0",
+    "npm-run-all": "^4.1.5",
     "prettier": "^2.0.5",
     "ts-loader": "^8.0.2",
     "ts-node": "^8.10.2",
-    "typescript": "^3.9.7"
+    "typescript": "^3.9.7",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-node-externals": "^2.5.0",
+    "webpack-shell-plugin": "^0.5.0"
   },
   "dependencies": {
     "apollo-datasource": "^0.7.2",

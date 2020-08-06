@@ -12,6 +12,7 @@
         "paths": {
             "@app": ["app.ts"],
             "@config": ["config.ts"],
+            "@launchApi": ["data/api/LaunchApi.ts"],
             "@database/*": ["database/*"],
             "@repository/*": ["database/repository/*"],
             "@core/*": ["core/*"],
