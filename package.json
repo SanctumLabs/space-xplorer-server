@@ -17,6 +17,7 @@
     "serve": "node build/server.js",
     "lint": "eslint 'src/*/**/*.{js,ts,tsx}'",
     "lint:fix": "eslint 'src/*/**/*.{js,ts,tsx}' --fix",
+    "postinstall": "npm run prisma:update-client",
     "watch:build": "webpack --watch",
     "watch:server": "nodemon"
   },
