@@ -1,6 +1,8 @@
 import S3 from 'aws-sdk/clients/s3';
 import isEmail from 'isemail';
 import mime from 'mime';
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
 import uuidv4 from 'uuid/v4';
 import { DataSource } from 'apollo-datasource';
 import db from './db';
