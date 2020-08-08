@@ -21,7 +21,7 @@ module.exports = {
       '@app': path.resolve('src/app.ts'),
       '@config': path.resolve('src/config.ts'),
       '@launchApi': path.resolve('src/data/api/LaunchApi.ts'),
-      '@database': path.resolve('src/data/db/'),
+      '@userRepo': path.resolve('src/data/db/UserRepository.ts'),
       '@repository': path.resolve('src/database/repository/'),
       '@core': path.resolve('src/core/'),
       '@jwt': path.resolve('src/core/jwt/JWT.ts'),

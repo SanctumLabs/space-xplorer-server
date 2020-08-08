@@ -5,11 +5,13 @@ const typeDefs = require('./schema');
 import logger from '@logger';
 import { ApolloServer } from 'apollo-server';
 import LaunchApi from '@launchApi';
+import UserRepo from '@userRepo';
 
 const server = new ApolloServer({
   typeDefs,
   dataSources: () => ({
     launchApi: new LaunchApi(),
+    userRepo: new UserRepo(),
   }),
 });
 

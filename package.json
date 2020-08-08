@@ -8,10 +8,15 @@
   "author": "BrianLusina <12752833+BrianLusina@users.noreply.github.com>",
   "license": "MIT",
   "scripts": {
+    "prisma:update-client": "prisma generate",
+    "migrate:create": "prisma migrate save --experimental",
+    "migrate:preview": "prisma migrate up --preview --experimental",
+    "migrate:up": "prisma migrate up --experimental",
+    "migrate:down": "prisma migrate down --experimental",
     "start": "npm-run-all --parallel watch:build watch:server",
     "serve": "node build/server.js",
     "lint": "eslint 'src/*/**/*.{js,ts,tsx}'",
-    "lint:fix": "eslint 'src/*/**/*.{js,ts,tsx}' --fix",    
+    "lint:fix": "eslint 'src/*/**/*.{js,ts,tsx}' --fix",
     "watch:build": "webpack --watch",
     "watch:server": "nodemon"
   },
@@ -25,6 +30,7 @@
   "devDependencies": {
     "@commitlint/cli": "^9.1.1",
     "@commitlint/config-conventional": "^9.1.1",
+    "@prisma/cli": "^2.4.1",
     "@types/jest": "^26.0.8",
     "@types/node": "^14.0.27",
     "@typescript-eslint/eslint-plugin": "^3.8.0",
@@ -54,10 +60,11 @@
     "webpack-shell-plugin": "^0.5.0"
   },
   "dependencies": {
+    "@prisma/client": "^2.4.1",
     "apollo-datasource": "^0.7.2",
     "apollo-datasource-rest": "^0.9.3",
     "apollo-server": "^2.16.1",
-    "aws-sdk": "^2.726.0",
+    "aws-sdk": "^2.729.0",
     "graphql": "^15.3.0",
     "isemail": "^3.2.0",
     "mime": "^2.4.6",

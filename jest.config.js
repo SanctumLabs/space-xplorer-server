@@ -52,6 +52,7 @@ module.exports = {
     '^@app': '<rootDir>/src/app.ts',
     '^@config': '<rootDir>/src/config.ts',
     '^@launchApi': '<rootDir>/src/data/api/LaunchApi.ts',
+    '^@userRepo': '<rootDir>/src/data/db/UserRepository.ts',
     '^@database': '<rootDir>/src/database',
     '^@database/(.*)$': '<rootDir>/src/database/$1',
     '^@repository/(.*)$': '<rootDir>/src/database/repository/$1',

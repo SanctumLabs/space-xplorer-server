@@ -1,0 +1,8 @@
+# Prisma Migrate lockfile v1
+
+20200808071247-init
+20200808074412-make-user-email-unique
+20200808075159-default-datetimes-to-now
+20200808080115-create-identifier-for-user
+20200808080202-create-identifier-for-trip
+20200808081601-drop-identifier-for-trip

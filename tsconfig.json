@@ -13,7 +13,7 @@
             "@app": ["app.ts"],
             "@config": ["config.ts"],
             "@launchApi": ["data/api/LaunchApi.ts"],
-            "@database/*": ["database/*"],
+            "@userRepo": ["data/db/UserRepository.ts"],
             "@repository/*": ["database/repository/*"],
             "@core/*": ["core/*"],
             "@jwt": ["core/jwt/JWT.ts"],
