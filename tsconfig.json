@@ -12,7 +12,8 @@
         "paths": {
             "@app": ["app.ts"],
             "@config": ["config.ts"],
-            "@database/*": ["database/*"],
+            "@launchApi": ["data/api/LaunchApi.ts"],
+            "@userRepo": ["data/db/UserRepository.ts"],
             "@repository/*": ["database/repository/*"],
             "@core/*": ["core/*"],
             "@jwt": ["core/jwt/JWT.ts"],

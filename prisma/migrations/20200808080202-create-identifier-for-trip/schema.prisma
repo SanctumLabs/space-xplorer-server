@@ -1,0 +1,32 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+datasource db {
+  provider = "postgresql"
+  url = "***"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id Int @default(autoincrement()) @id
+  identifier String @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+  email String @unique
+  profileImage String?
+  token String
+  trip Trip[]
+}
+
+model Trip {
+  id Int @default(autoincrement()) @id
+  identifier String @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+  launchId Int @unique
+  userId Int
+  user User @relation(fields: [userId], references: [id])
+}
