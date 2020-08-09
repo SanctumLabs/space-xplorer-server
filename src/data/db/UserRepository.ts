@@ -1,9 +1,7 @@
 import S3 from 'aws-sdk/clients/s3';
 import isEmail from 'isemail';
 import mime from 'mime';
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-import uuidv4 from 'uuid/v4';
+import uuid from 'uuid';
 import { DataSource } from 'apollo-datasource';
 import db from './db';
 import { User, Trip } from '@prisma/client';
@@ -39,7 +37,7 @@ export default class UserRepository extends DataSource {
 
     const user = await db.user.create({
       data: {
-        identifier: uuidv4(),
+        identifier: uuid.v4(),
         email,
         token: new Buffer(email).toString('base64'),
       },
@@ -99,7 +97,7 @@ export default class UserRepository extends DataSource {
 
     const createdTrip = await db.trip.create({
       data: {
-        identifier: uuidv4(),
+        identifier: uuid.v4(),
         launchId,
         user: userId,
       },
@@ -190,7 +188,7 @@ export default class UserRepository extends DataSource {
      * a unique filename for the upload
      */
     const { createReadStream, mimetype } = await file;
-    const filename = uuidv4() + '.' + mime.getExtension(mimetype);
+    const filename = uuid.v4() + '.' + mime.getExtension(mimetype);
 
     // Upload the file to an S3 bucket using the createReadStream
     await s3

@@ -8,8 +8,8 @@ export default {
   Query: {
     // @ts-ignore
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    launches: async (_, { pageSize = 20, after }, { datasources }): any => {
-      const allLaunches = await datasources.launchApi.getAllLaunches();
+    launches: async (_, { pageSize = 20, after }, { dataSources }): any => {
+      const allLaunches = await dataSources.launchApi.getAllLaunches();
 
       // reverse chronological order
       allLaunches.reverse();
@@ -25,10 +25,10 @@ export default {
       };
     },
     // @ts-ignore
-    launch: async (_, { id }, { datasources }): Launch =>
-      await datasources.launchApi.getLaunchById(id),
+    launch: async (_, { id }, { dataSources }): Launch =>
+      await dataSources.launchApi.getLaunchById(id),
 
     // @ts-ignore
-    me: async (_, __, { datasources }): User => await datasources.userRepo.getUser(),
+    me: async (_, __, { dataSources }): User => await dataSources.userRepo.getUser(),
   },
 };

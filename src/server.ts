@@ -8,6 +8,10 @@ import LaunchApi from '@launchApi';
 import UserRepo from '@userRepo';
 import queryResolver from '@resolvers/queryResolver';
 
+process.on('uncaughtException', (e) => {
+  logger.error(`UncaughtException ${e}`);
+});
+
 const server = new ApolloServer({
   typeDefs,
   resolvers: [queryResolver],
