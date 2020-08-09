@@ -16,7 +16,12 @@
             "@userRepo": ["data/db/UserRepository.ts"],
             "@core/*": ["core/*"],
             "@utils": ["utils.ts"],
-            "@resolvers/*": ["resolvers/*"],
+            "@gql/*": ["gql/*"],
+            "@launchResolver": ["gql/launch/launchResolver.ts"],
+            "@missionResolver": ["gql/mission/missionResolver.ts"],
+            "@mutationResolver": ["gql/mutation/mutationResolver.ts"],
+            "@queryResolver": ["gql/query/queryResolver.ts"],
+            "@userResolver": ["gql/user/userResolver.ts"],
             "@logger": ["core/logger.ts"]
         }
     },
