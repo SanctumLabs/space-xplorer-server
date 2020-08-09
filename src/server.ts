@@ -6,9 +6,11 @@ import logger from '@logger';
 import { ApolloServer } from 'apollo-server';
 import LaunchApi from '@launchApi';
 import UserRepo from '@userRepo';
+import queryResolver from '@resolvers/queryResolver';
 
 const server = new ApolloServer({
   typeDefs,
+  resolvers: [queryResolver],
   dataSources: () => ({
     launchApi: new LaunchApi(),
     userRepo: new UserRepo(),

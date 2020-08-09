@@ -52,7 +52,7 @@ export default class UserRepository extends DataSource {
    * They will be used to retrieve their full detail
    * @param {string} email User's email address
    */
-  async getUser(email: string): Promise<User> {
+  async getUser(email?: string): Promise<User> {
     const emailAddress = this.context && this.context.user ? this.context.user.email : email;
 
     if (!emailAddress || isEmail.validate(emailAddress)) {

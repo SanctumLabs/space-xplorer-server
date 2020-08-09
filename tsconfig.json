@@ -14,17 +14,10 @@
             "@config": ["config.ts"],
             "@launchApi": ["data/api/LaunchApi.ts"],
             "@userRepo": ["data/db/UserRepository.ts"],
-            "@repository/*": ["database/repository/*"],
             "@core/*": ["core/*"],
-            "@jwt": ["core/jwt/JWT.ts"],
-            "@logger": ["core/logger.ts"],
-            "@routes": ["routes/index.ts"],
-            "@security/*": ["security/*"],
-            "@authentication/*": ["security/authentication/*"],
-            "@authorization/*": ["security/authorization/*"],
-            "@authUtils": ["security/authUtils/index.ts"],
-            "@utils/*": ["utils/*"],
-            "app-request": ["types/app-request.d.ts"]
+            "@utils": ["utils.ts"],
+            "@resolvers/*": ["resolvers/*"],
+            "@logger": ["core/logger.ts"]
         }
     },
     "include": [
