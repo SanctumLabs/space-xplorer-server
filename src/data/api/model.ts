@@ -140,3 +140,23 @@ export type Launch = {
   timeline?: Timeline;
   crew?: string[];
 };
+
+export type MissionResponse = {
+  name: string;
+  missionPatchSmall: string;
+  missionPatchLarge: string;
+};
+
+export type RocketResponse = {
+  id: string;
+  name: string;
+  type: string;
+};
+
+export type LaunchResponse = {
+  id: number;
+  cursor: string;
+  site: string;
+  mission: MissionResponse;
+  rocket: RocketResponse;
+};
