@@ -57,7 +57,12 @@ module.exports = {
     '^@database/(.*)$': '<rootDir>/src/database/$1',
     '^@core/(.*)$': '<rootDir>/src/core/$1',
     '^@utils': '<rootDir>/src/utils.ts',
-    '^@resolvers/(.*)$': '<rootDir>/src/resolvers/$1',
     '^@logger': '<rootDir>/src/core/logger.ts',
+    '^@gql/(.*)$': '<rootDir>/src/gql/$1',
+    '^@launchResolver': '<rootDir>/src/gql/launch/launchResolver.ts',
+    '^@missionResolver': '<rootDir>/src/gql/mission/missionResolver.ts',
+    '^@mutationResolver': '<rootDir>/src/gql/mutation/mutationResolver.ts',
+    '^@queryResolver': '<rootDir>/src/gql/query/queryResolver.ts',
+    '^@userResolver': '<rootDir>/src/gql/user/userResolver.ts',
   },
 };

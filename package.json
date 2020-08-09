@@ -8,6 +8,8 @@
   "author": "BrianLusina <12752833+BrianLusina@users.noreply.github.com>",
   "license": "MIT",
   "scripts": {
+    "build": "npm run clean && webpack --optimize-minimize",
+    "clean": "rm -rf build",
     "prisma:update-client": "prisma generate",
     "migrate:create": "prisma migrate save --experimental",
     "migrate:preview": "prisma migrate up --preview --experimental",
