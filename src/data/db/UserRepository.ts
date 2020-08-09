@@ -149,14 +149,10 @@ export default class UserRepository extends DataSource {
     }
 
     try {
-      const user = await db.user.findOne({ where: { identifier: userId } });
-
       const deletedTrip = await db.trip.delete({
         include: {
           user: {
-            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-            // @ts-ignore
-            select: { id: user.id },
+            select: { id: true },
           },
         },
         where: {

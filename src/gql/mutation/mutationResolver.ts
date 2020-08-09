@@ -22,7 +22,7 @@ export default {
     },
 
     cancelTrip: async (_: any, { launchId }: any, { dataSources }: any) => {
-      const result = dataSources.userRepo.cancelTrip(launchId);
+      const result = dataSources.userRepo.cancelTrip(parseInt(launchId));
 
       if (!result)
         return {
