@@ -1,5 +1,5 @@
 import { spaceXApiBaseUrl } from '@config';
-import { Launch } from './model';
+import { Launch, LaunchResponse } from './model';
 import { RESTDataSource } from 'apollo-datasource-rest';
 
 export default class LaunchAPI extends RESTDataSource {
@@ -8,21 +8,21 @@ export default class LaunchAPI extends RESTDataSource {
     this.baseURL = spaceXApiBaseUrl;
   }
 
-  async getAllLaunchers() {
+  async getAllLaunches(): Promise<LaunchResponse[]> {
     const response = await this.get('launches');
     return Array.isArray(response) ? response.map((launch) => this.launchReducer(launch)) : [];
   }
 
-  async getLaunchById(launchId: string) {
+  async getLaunchById(launchId: string): Promise<LaunchResponse> {
     const response = await this.get('launches', { flight_number: launchId });
     return this.launchReducer(response[0]);
   }
 
-  async getLaunchesByIds(launchIds: string[]) {
+  async getLaunchesByIds(launchIds: string[]): Promise<LaunchResponse[]> {
     return Promise.all(launchIds.map((launchId) => this.getLaunchById(launchId)));
   }
 
-  launchReducer(launch: Launch) {
+  launchReducer(launch: Launch): LaunchResponse {
     return {
       id: launch.flight_number || 0,
       cursor: `${launch.launch_date_unix}`,

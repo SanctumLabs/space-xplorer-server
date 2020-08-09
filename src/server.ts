@@ -3,12 +3,21 @@ require('dotenv').config();
 const typeDefs = require('./schema');
 
 import logger from '@logger';
-import { ApolloServer } from 'apollo-server';
 import LaunchApi from '@launchApi';
 import UserRepo from '@userRepo';
+import queryResolver from '@resolvers/queryResolver';
+import missionResolver from '@resolvers/missionResolver';
+import userResolver from '@resolvers/userResolver';
+import launchResolver from '@resolvers/launchResolver';
+import { ApolloServer } from 'apollo-server';
+
+process.on('uncaughtException', (e) => {
+  logger.error(`UncaughtException ${e}`);
+});
 
 const server = new ApolloServer({
   typeDefs,
+  resolvers: [queryResolver, missionResolver, userResolver, launchResolver],
   dataSources: () => ({
     launchApi: new LaunchApi(),
     userRepo: new UserRepo(),
