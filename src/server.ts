@@ -9,6 +9,7 @@ import queryResolver from '@resolvers/queryResolver';
 import missionResolver from '@resolvers/missionResolver';
 import userResolver from '@resolvers/userResolver';
 import launchResolver from '@resolvers/launchResolver';
+import mutationResolver from '@resolvers/mutationResolver';
 import { ApolloServer } from 'apollo-server';
 
 process.on('uncaughtException', (e) => {
@@ -17,7 +18,7 @@ process.on('uncaughtException', (e) => {
 
 const server = new ApolloServer({
   typeDefs,
-  resolvers: [queryResolver, missionResolver, userResolver, launchResolver],
+  resolvers: [queryResolver, missionResolver, userResolver, launchResolver, mutationResolver],
   dataSources: () => ({
     launchApi: new LaunchApi(),
     userRepo: new UserRepo(),
