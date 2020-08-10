@@ -21,7 +21,7 @@ describe('[User.trips]', () => {
 
     // make sure the dataSources were called properly
     expect(getLaunchIdsByUser).toBeCalled();
-    expect(getLaunchesByIds).toBeCalledWith({ launchIds: [999] });
+    expect(getLaunchesByIds).toBeCalledWith([999]);
   });
 
   it('returns empty array if no response', async () => {

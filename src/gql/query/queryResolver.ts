@@ -8,7 +8,7 @@ export default {
   Query: {
     // @ts-ignore
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    launches: async (_, { pageSize = 20, after }, { dataSources }): any => {
+    launches: async (_, { pageSize = 20, after }: any, { dataSources }): any => {
       const allLaunches = await dataSources.launchApi.getAllLaunches();
 
       // reverse chronological order
