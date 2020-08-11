@@ -20,6 +20,7 @@ module.exports = {
     '<rootDir>/src/server.ts',
     '<rootDir>/src/data/db/db.ts',
     '<rootDir>/src/data/api/model.ts',
+    '<rootDir>/src/data/api/mocks.ts',
     '<rootDir>/src/core/logger.ts',
     '<rootDir>/src/gql/schema.ts',
     '<rootDir>/src/gql/launch/schema.ts',

@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import S3 from 'aws-sdk/clients/s3';
 import isEmail from 'isemail';
 import mime from 'mime';
@@ -19,11 +22,7 @@ export default class UserRepository extends DataSource {
    * here, so we can know about the user making requests
    * @param {object} config Config passed in from ApolloServer
    */
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   initialize(config: any): void {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
     this.context = config.context;
   }
 

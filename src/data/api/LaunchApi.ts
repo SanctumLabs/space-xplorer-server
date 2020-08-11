@@ -13,12 +13,12 @@ export default class LaunchAPI extends RESTDataSource {
     return Array.isArray(response) ? response.map((launch) => this.launchReducer(launch)) : [];
   }
 
-  async getLaunchById(launchId: string): Promise<LaunchResponse> {
+  async getLaunchById(launchId: number): Promise<LaunchResponse> {
     const response = await this.get('launches', { flight_number: launchId });
     return this.launchReducer(response[0]);
   }
 
-  async getLaunchesByIds(launchIds: string[]): Promise<LaunchResponse[]> {
+  async getLaunchesByIds(launchIds: number[]): Promise<LaunchResponse[]> {
     return Promise.all(launchIds.map((launchId) => this.getLaunchById(launchId)));
   }
 

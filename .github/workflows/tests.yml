@@ -29,6 +29,7 @@ jobs:
 
       - name: Run codacy-coverage-reporter
         uses: codacy/codacy-coverage-reporter-action@master
+        # this is because this codacy-coverage-reporter-action does not currently support macos
         if: matrix.os == 'ubuntu-latest'
         with:
           project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
