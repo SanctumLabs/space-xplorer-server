@@ -2,7 +2,7 @@ name: NodeJS Package
 
 on:
   push:
-    branches: [master, beta, develop]
+    branches: [main, beta, develop]
 
 jobs:
   bump-version:

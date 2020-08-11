@@ -42,7 +42,7 @@ type Payload = {
   payload_mass_kg: number;
   payload_mass_lbs: number;
   orbit: string;
-  orbitParams: OrbitParams;
+  orbit_params: OrbitParams;
 };
 
 type FirstStage = {
@@ -124,19 +124,19 @@ export type Launch = {
   launch_date_local: string;
   is_tentative: boolean;
   tentative_max_precision: string;
-  tbd: boolean;
-  launch_window: number;
+  tbd?: boolean;
+  launch_window?: number;
   rocket: Rocket;
   ships: string[];
   telemetry: Telemetry;
   reuse: Reuse;
   launch_site: LaunchSite;
   launch_success: boolean;
-  launch_failure_details: LaunchFailureDetails;
+  launch_failure_details?: LaunchFailureDetails;
   links: Link;
   details: string;
-  static_fire_date_utc?: number;
-  static_fire_date_unix?: number;
+  static_fire_date_utc?: number | string;
+  static_fire_date_unix?: number | string;
   timeline?: Timeline;
   crew?: string[];
 };
