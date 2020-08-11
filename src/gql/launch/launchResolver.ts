@@ -5,6 +5,6 @@ import { LaunchResponse } from 'data/api/model';
 export default {
   Launch: {
     isBooked: async (launch: LaunchResponse, _: any, { dataSources }: any): Promise<boolean> =>
-      await dataSources.userRepo.isBookedOnLaunch({ launchId: launch.id }),
+      await dataSources.userRepo.isBookedOnLaunch(launch.id),
   },
 };

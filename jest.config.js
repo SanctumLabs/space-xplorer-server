@@ -1,5 +1,6 @@
 module.exports = {
   // runner: 'tsc',
+  preset: 'ts-jest',
   testEnvironment: 'node',
   displayName: {
     name: 'SpaceXplorerApi',
@@ -21,6 +22,7 @@ module.exports = {
     '<rootDir>/src/data/db/db.ts',
     '<rootDir>/src/data/api/model.ts',
     '<rootDir>/src/data/api/mocks.ts',
+    '<rootDir>/src/data/db/mocks.ts',
     '<rootDir>/src/core/logger.ts',
     '<rootDir>/src/gql/schema.ts',
     '<rootDir>/src/gql/launch/schema.ts',
@@ -29,13 +31,12 @@ module.exports = {
     '<rootDir>/src/gql/query/schema.ts',
     '<rootDir>/src/gql/user/schema.ts',
   ],
-  // TODO: setup coverageThreshold once bug on testing has been fixed
-  // coverageThreshold: {
-  //   global: {
-  //     lines: 90,
-  //     statements: 90,
-  //   },
-  // },
+  coverageThreshold: {
+    global: {
+      lines: 80,
+      statements: 80,
+    },
+  },
   transform: {
     '^.+\\.ts$': 'ts-jest',
   },

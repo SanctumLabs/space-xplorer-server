@@ -41,13 +41,13 @@ export default class UserRepository extends DataSource {
         data: {
           identifier: uuidv4().toString(),
           email,
-          token: new Buffer(email).toString('base64'),
+          token: Buffer.from(email).toString('base64'),
         },
       });
-      logger.info(`Successfully created user ${email}`);
       return user;
     } catch (error) {
       logger.error(`Failed to create user with error ${error}`);
+      return null;
     }
   }
 
@@ -70,11 +70,10 @@ export default class UserRepository extends DataSource {
           email,
         },
       });
-      logger.info(`Retrieved user: ${user}`);
-      console.log(`Retreived user: ${JSON.stringify(user)}`);
       return user;
     } catch (error) {
       logger.error(`Failed to get user with error ${error}`);
+      return null;
     }
   }
 
@@ -86,7 +85,7 @@ export default class UserRepository extends DataSource {
     const userId = this.context.user.identifier;
     logger.info(`Booking trips ${launchIds} for user ${userId}`);
     if (!userId) {
-      logger.error(`Failed to book trips for user`);
+      logger.error(`Failed to book trips for user. User not available in context`);
       return;
     }
 
@@ -100,10 +99,10 @@ export default class UserRepository extends DataSource {
         }
       }
 
-      logger.info(`Successfully booked trips ${launchIds} for User: ${userId}`);
       return bookedTrips;
     } catch (error) {
       logger.error(`Failed to book trips for user ${userId} with error ${error}`);
+      return null;
     }
   }
 
@@ -130,7 +129,8 @@ export default class UserRepository extends DataSource {
 
       return createdTrip;
     } catch (error) {
-      logger.error(`Failed to book a trip ${launchId} for user ${userId} with error ${error}`);
+      logger.error(`Failed to book trip ${launchId} for user ${userId} with error ${error}`);
+      return null;
     }
   }
 
@@ -159,11 +159,10 @@ export default class UserRepository extends DataSource {
         },
       });
 
-      logger.info(`Successfully cancelled trip ${launchId} for User: ${userId} ...`);
-
       return deletedTrip;
     } catch (error) {
       logger.error(`Failed to cancel trip for user with error ${error}`);
+      return null;
     }
   }
 
@@ -188,6 +187,7 @@ export default class UserRepository extends DataSource {
       return foundTrips.map((trip) => trip.launchId);
     } catch (error) {
       logger.error(`Failed to get launch IDs for user ${userId} with error ${error}`);
+      return [];
     }
   }
 
@@ -200,18 +200,23 @@ export default class UserRepository extends DataSource {
     const userId = this.context.user.identifier;
 
     try {
-      const foundTrips = await db.trip.findMany({
+      const foundTrip = await db.trip.findOne({
         where: {
           launchId,
+        },
+        include: {
           user: {
-            identifier: userId,
+            select: {
+              identifier: userId,
+            },
           },
         },
       });
 
-      return foundTrips && foundTrips.length > 0;
+      return foundTrip !== null || foundTrip !== undefined;
     } catch (error) {
       logger.error(`Failed to check if Trip ${launchId} is booked for user ${userId}`);
+      return false;
     }
   }
 
@@ -259,6 +264,7 @@ export default class UserRepository extends DataSource {
       return updatedUser;
     } catch (error) {
       logger.error(`Failed to upload image for user ${userId} with error ${error}`);
+      return null;
     }
   }
 }

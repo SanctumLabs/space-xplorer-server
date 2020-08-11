@@ -48,7 +48,7 @@ export default {
     login: async (_: any, { email }: any, { dataSources }: any) => {
       const user = await dataSources.userRepo.getUser(email);
       if (user) {
-        user.token = new Buffer(email).toString('base64');
+        user.token = Buffer.from(email).toString('base64');
         return user;
       }
     },

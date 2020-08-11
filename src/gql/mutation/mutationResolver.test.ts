@@ -82,7 +82,7 @@ describe('[Mutation.login]', () => {
 
   it('returns base64 encoded email as user token if successful', async () => {
     const args = { email: 'a@a.a' };
-    const base64Email = new Buffer(mockContext.user.email).toString('base64');
+    const base64Email = Buffer.from(mockContext.user.email).toString('base64');
     getUser.mockReturnValueOnce({ token: base64Email });
 
     // check the resolver response
@@ -100,6 +100,33 @@ describe('[Mutation.login]', () => {
 
     // check the resolver response
     const res = await resolver.Mutation.login(null, args, mockContext);
+    expect(res).toBeFalsy();
+  });
+});
+
+describe('[Mutation.signUp]', () => {
+  const { createUser } = mockContext.dataSources.userRepo;
+
+  it('returns user details on signUp', async () => {
+    const args = { email: 'a@a.a' };
+    const base64Email = Buffer.from(mockContext.user.email).toString('base64');
+    createUser.mockReturnValueOnce({ token: base64Email });
+
+    // check the resolver response
+    const res = await resolver.Mutation.signUp(null, args, mockContext);
+    expect(res.token).toEqual('YUBhLmE=');
+
+    // check if the dataSource was called with correct args
+    expect(createUser).toBeCalledWith(args.email);
+  });
+
+  it('returns nothing if signUp fails', async () => {
+    const args = { email: 'a@a.a' };
+    // simulate failed lookup/creation
+    createUser.mockReturnValueOnce(false);
+
+    // check the resolver response
+    const res = await resolver.Mutation.signUp(null, args, mockContext);
     expect(res).toBeFalsy();
   });
 });
