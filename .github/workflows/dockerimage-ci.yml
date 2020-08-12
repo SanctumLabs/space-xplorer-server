@@ -14,7 +14,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Push to Migrations Image to GitHub Packages
+      - name: Push Migrations Image to GitHub Packages
         uses: docker/build-push-action@v1
         with:
           username: ${{ github.actor }}
@@ -24,7 +24,7 @@ jobs:
           dockerfile: "Dockerfile.migrations"
           tag_with_ref: true
 
-      - name: Push to APi Image to GitHub Packages
+      - name: Push API Image to GitHub Packages
         uses: docker/build-push-action@v1
         with:
           username: ${{ github.actor }}

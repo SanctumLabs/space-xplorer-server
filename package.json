@@ -1,7 +1,7 @@
 {
   "name": "@wyvarn/space-xplorer-server",
   "private": false,
-  "description": "Space Xplorer Server",
+  "description": "Space Xplorer API",
   "main": "server.js",
   "version": "1.0.0",
   "repository": "git@github.com:Wyvarn/space-xplorer-server.git",

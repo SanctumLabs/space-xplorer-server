@@ -1,15 +1,11 @@
-FROM node:13 as builder
+FROM node:13-alpine as builder
 
 COPY . .
 
 RUN npm install
 RUN npm run build
 
-COPY ecosystem.config.js ecosystem.config.js
-COPY package.json package.json
-COPY prisma prisma
-
-FROM node:13
+FROM node:13-alpine
 
 # setting working directory in the container
 WORKDIR /usr/src/app
