@@ -6,6 +6,7 @@
 ![docker image build](https://github.com/Wyvarn/space-xplorer-server/workflows/Space%20Xplorer%20Server%20docker%20image%20build/badge.svg)
 ![Github Release](https://github.com/Wyvarn/space-xplorer-server/workflows/Github%20Release/badge.svg)
 ![Tests](https://github.com/Wyvarn/space-xplorer-server/workflows/Tests/badge.svg)
+[![Codacy Badge](https://app.codacy.com/project/badge/Coverage/a54ebeacedd24de8b063f9c0041178db)](https://www.codacy.com/gh/Wyvarn/space-xplorer-server?utm_source=github.com&utm_medium=referral&utm_content=Wyvarn/space-xplorer-server&utm_campaign=Badge_Coverage)
 
 Server that interfaces with SpaceX API to allow users to book seats on the next SpaceX launch
 
