@@ -14,12 +14,22 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Push to GitHub Packages
+      - name: Push to Migrations Image to GitHub Packages
         uses: docker/build-push-action@v1
         with:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: docker.pkg.github.com
-          repository: wyvarn/space-xplorer-client/space-xplorer-server
+          repository: wyvarn/space-xplorer-server/space-xplorer-migrations
+          dockerfile: "Dockerfile.migrations"
+          tag_with_ref: true
+
+      - name: Push to APi Image to GitHub Packages
+        uses: docker/build-push-action@v1
+        with:
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+          registry: docker.pkg.github.com
+          repository: wyvarn/space-xplorer-server/space-xplorer-api
           dockerfile: "Dockerfile"
           tag_with_ref: true

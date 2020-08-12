@@ -14,7 +14,6 @@ FROM node:13
 # setting working directory in the container
 WORKDIR /usr/src/app
 
-# grant permission of node project directory to node user
 COPY --from=builder build/server.js server.js
 COPY --from=builder ecosystem.config.js .
 COPY --from=builder prisma .
