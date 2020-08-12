@@ -8,7 +8,6 @@ RUN npm run build
 COPY ecosystem.config.js ecosystem.config.js
 COPY package.json package.json
 COPY prisma prisma
-COPY build/server.js server.js
 
 FROM node:13
 
@@ -16,7 +15,7 @@ FROM node:13
 WORKDIR /usr/src/app
 
 # grant permission of node project directory to node user
-COPY --from=builder server.js .
+COPY --from=builder build/server.js server.js
 COPY --from=builder ecosystem.config.js .
 COPY --from=builder prisma .
 COPY --from=builder package.json .
