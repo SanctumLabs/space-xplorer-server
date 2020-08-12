@@ -21,7 +21,6 @@ COPY --from=builder prisma .
 COPY --from=builder package.json .
 
 RUN npm install --production
-RUN npx prisma generate
 RUN npm install pm2 -g
 
 # container exposed network port number
