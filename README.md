@@ -3,7 +3,7 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/8f2d9d6aca7243af8bea52f0db936e32)](https://app.codacy.com/gh/Wyvarn/space-xplorer-server?utm_source=github.com&utm_medium=referral&utm_content=Wyvarn/space-xplorer-server&utm_campaign=Badge_Grade_Settings)
 ![Code scanning](https://github.com/Wyvarn/space-xplorer-server/workflows/Code%20scanning/badge.svg)
 ![NodeJS Package](https://github.com/Wyvarn/space-xplorer-server/workflows/NodeJS%20Package/badge.svg)
-![docker image build](https://github.com/Wyvarn/space-xplorer-server/workflows/Space%20Xplorer%20Server%20docker%20image%20build/badge.svg)
+![Space Xplorer Docker build](https://github.com/Wyvarn/space-xplorer-server/workflows/Space%20Xplorer%20Docker%20build/badge.svg)
 ![Github Release](https://github.com/Wyvarn/space-xplorer-server/workflows/Github%20Release/badge.svg)
 ![Tests](https://github.com/Wyvarn/space-xplorer-server/workflows/Tests/badge.svg)
 [![Codacy Badge](https://app.codacy.com/project/badge/Coverage/a54ebeacedd24de8b063f9c0041178db)](https://www.codacy.com/gh/Wyvarn/space-xplorer-server?utm_source=github.com&utm_medium=referral&utm_content=Wyvarn/space-xplorer-server&utm_campaign=Badge_Coverage)

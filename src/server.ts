@@ -47,8 +47,14 @@ const server = new ApolloServer({
   resolvers: [queryResolver, missionResolver, userResolver, launchResolver, mutationResolver],
   dataSources,
   context,
+  logger,
+  debug: environment !== 'production',
   playground: environment !== 'production',
   introspection: environment !== 'production',
+  engine: {
+    reportSchema: true,
+    logger,
+  },
 });
 
 server.listen().then(({ url }: any) => {
