@@ -5,9 +5,12 @@ COPY . .
 RUN npm install
 RUN npm run build
 
+# grant permission of node project directory to node user
+
 COPY ecosystem.config.js ecosystem.config.js
 COPY package.json package.json
 COPY prisma prisma
+COPY build/server.js server.js
 
 FROM node:13
 
