@@ -12,18 +12,19 @@
         "paths": {
             "@app": ["app.ts"],
             "@config": ["config.ts"],
-            "@database/*": ["database/*"],
-            "@repository/*": ["database/repository/*"],
+            "@launchApi": ["data/api/LaunchApi.ts"],
+            "@userRepo": ["data/db/UserRepository.ts"],
             "@core/*": ["core/*"],
-            "@jwt": ["core/jwt/JWT.ts"],
+            "@utils": ["utils.ts"],
+            "@gql/*": ["gql/*"],
+            "@launchResolver": ["gql/launch/launchResolver.ts"],
+            "@missionResolver": ["gql/mission/missionResolver.ts"],
+            "@mutationResolver": ["gql/mutation/mutationResolver.ts"],
+            "@queryResolver": ["gql/query/queryResolver.ts"],
+            "@userResolver": ["gql/user/userResolver.ts"],
             "@logger": ["core/logger.ts"],
-            "@routes": ["routes/index.ts"],
-            "@security/*": ["security/*"],
-            "@authentication/*": ["security/authentication/*"],
-            "@authorization/*": ["security/authorization/*"],
-            "@authUtils": ["security/authUtils/index.ts"],
-            "@utils/*": ["utils/*"],
-            "app-request": ["types/app-request.d.ts"]
+            "@cache": ["core/cache.ts"],
+            "@context": ["core/context.ts"]
         }
     },
     "include": [

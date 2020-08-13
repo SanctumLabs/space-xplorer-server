@@ -1,0 +1,22 @@
+name: Schema Registration
+
+on:
+  push:
+    branches: [main, beta, develop]
+
+jobs:
+  publish-gpr:
+    name: Publish Schmea
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Update Schema
+        uses: actions/setup-node@v1
+        with:
+          node-version: 13
+      - run: npx apollo service:push --graph=space-xplorer-graph --key=$APOLLO_KEY --localSchemaFile=./src/gql/schema.graphql
+        env:
+          APOLLO_KEY: ${{ secrets.APOLLO_KEY }}
