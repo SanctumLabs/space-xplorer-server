@@ -32,14 +32,26 @@ type LaunchConnection {
 
 type Mutation {
 
-    # if false, signup failed -- check errors
+    """
+    Allows booking of multiple trips by users by providing a list of
+    launch IDs
+    """
     bookTrips(launchIds: [ID]!): TripUpdateResponse!
 
-    # if false, cancellation failed -- check errors
+    """
+    Users can cancel trips that they have booked by providing the launch ID
+    """
     cancelTrip(launchId: ID!): TripUpdateResponse!
-    
+
+    """
+    Allows users to Register/SignUp to the platform given their email address
+    & returns full user details
+    """    
     signUp(email: String): User!
     
+    """
+    Logs in a user & returns their token
+    """
     login(email: String): User!
 
     # uploadProfileImage(file: Upload!): User

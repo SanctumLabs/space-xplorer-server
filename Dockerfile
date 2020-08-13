@@ -12,7 +12,7 @@ WORKDIR /usr/src/app
 
 COPY --from=builder build/server.js server.js
 COPY --from=builder ecosystem.config.js .
-COPY --from=builder prisma .
+COPY --from=builder prisma prisma
 COPY --from=builder package.json .
 
 RUN npm install --production
