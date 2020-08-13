@@ -3,7 +3,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 export const environment = process.env.NODE_ENV;
-export const port = process.env.PORT || 4000;
+export const port = process.env.PORT;
 
 export const db = {
   name: process.env.DATABASE_NAME,

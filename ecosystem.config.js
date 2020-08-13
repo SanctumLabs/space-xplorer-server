@@ -6,7 +6,6 @@ module.exports = {
       watch: true,
       env: {
         NODE_ENV: 'production',
-        PORT: 4000,
       },
       instances: 'max',
       exec_mode: 'cluster',
@@ -23,7 +22,6 @@ module.exports = {
       watch: true,
       env: {
         NODE_ENV: 'development',
-        PORT: 4000,
       },
       instances: 'max',
       exec_mode: 'cluster',
