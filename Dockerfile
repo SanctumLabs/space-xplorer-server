@@ -19,7 +19,7 @@ RUN npm install --production
 RUN npm install pm2 -g
 
 # container exposed network port number
-EXPOSE 4000
+# EXPOSE 4000
 
 # command to run within the container
 CMD [ "pm2-runtime", "start", "ecosystem.config.js" ]
