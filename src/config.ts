@@ -30,5 +30,8 @@ export const spaceXApiBaseUrl = process.env.SPACEX_API_BASE_URL;
 export const cacheConfig = {
   host: process.env.CACHE_HOST,
   port: process.env.CACHE_PORT,
+  user: process.env.CACHE_USER,
+  password: process.env.CACHE_PASSWORD,
+  uri: process.env.CACHE_URI || null,
   isAvailable: process.env.CACHE_HOST !== undefined,
 };

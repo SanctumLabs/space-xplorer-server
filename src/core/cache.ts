@@ -13,4 +13,5 @@ import { RedisCache } from 'apollo-server-cache-redis';
 export default new RedisCache({
   host: cacheConfig.host,
   port: cacheConfig.port,
+  password: cacheConfig.password,
 });
