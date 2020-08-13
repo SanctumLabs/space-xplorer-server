@@ -10,6 +10,11 @@ export default createLogger({
       format: format.combine(format.errors({ stack: true }), format.prettyPrint()),
       handleExceptions: true,
     }),
+    new transports.Console({
+      level: 'info',
+      format: format.combine(format.errors({ stack: true }), format.prettyPrint()),
+      handleExceptions: true,
+    }),
   ],
   exitOnError: false, // do not exit on handled exceptions
 });

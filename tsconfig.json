@@ -22,7 +22,9 @@
             "@mutationResolver": ["gql/mutation/mutationResolver.ts"],
             "@queryResolver": ["gql/query/queryResolver.ts"],
             "@userResolver": ["gql/user/userResolver.ts"],
-            "@logger": ["core/logger.ts"]
+            "@logger": ["core/logger.ts"],
+            "@cache": ["core/cache.ts"],
+            "@context": ["core/context.ts"]
         }
     },
     "include": [

@@ -1,5 +1,4 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-/* eslint-disable @typescript-eslint/no-explicit-any */
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 require('dotenv').config();
 
 import { ApolloServer } from 'apollo-server';
@@ -13,34 +12,19 @@ import userResolver from '@userResolver';
 import launchResolver from '@launchResolver';
 import mutationResolver from '@mutationResolver';
 import typeDefs from '@gql/schema';
-import isEmail from 'isemail';
-import { environment } from '@config';
+import { environment, port, cacheConfig } from '@config';
+import cache from '@cache';
+import context from '@context';
 
 process.on('uncaughtException', (e) => {
   logger.error(`UncaughtException ${e}`);
 });
 
-const userRepo = new UserRepo();
-
 // set up any dataSources our resolvers need
 const dataSources = () => ({
   launchApi: new LaunchApi(),
-  userRepo: userRepo,
+  userRepo: new UserRepo(),
 });
-
-// the function that sets up the global context for each resolver, using the req
-const context = async ({ req }: any) => {
-  // simple auth check on every request
-  const auth = (req.headers && req.headers.authorization) || '';
-  const email = Buffer.from(auth, 'base64').toString('ascii');
-
-  // if the email isn't formatted validly, return null for user
-  if (!isEmail.validate(email)) return { user: null };
-
-  // find a user by their email
-  const user = await userRepo.getUser(email);
-  return { user };
-};
 
 const server = new ApolloServer({
   typeDefs,
@@ -48,6 +32,8 @@ const server = new ApolloServer({
   dataSources,
   context,
   logger,
+  // only configure cache if available
+  cache: cacheConfig.isAvailable ? cache : undefined,
   debug: environment !== 'production',
   playground: environment !== 'production',
   introspection: environment !== 'production',
@@ -57,6 +43,10 @@ const server = new ApolloServer({
   },
 });
 
-server.listen().then(({ url }: any) => {
-  logger.info(`🚀 Server ready at ${url}`);
-});
+server
+  .listen({
+    port,
+  })
+  .then(({ url }) => {
+    logger.info(`🚀 Server ready at ${url}`);
+  });

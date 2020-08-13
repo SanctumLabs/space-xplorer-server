@@ -32,6 +32,8 @@ module.exports = {
       '@queryResolver': path.resolve('src/gql/query/queryResolver.ts'),
       '@userResolver': path.resolve('src/gql/user/userResolver.ts'),
       '@logger': path.resolve('src/core/logger.ts'),
+      '@cache': path.resolve('src/core/cache.ts'),
+      '@context': path.resolve('src/core/context.ts'),
     },
   },
   plugins:
