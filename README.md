@@ -82,3 +82,34 @@ Now you are all set to run the application:
 ``` bash
 yarn start
 ```
+
+That should pretty much be it when running the application. You can now navigate to http://localhost:4000 on your browser & should be able to
+view the GraphQL client browser & create queries.
+
+## Deployment
+
+This application has been built for it to be deployed on any environment:
+
+1. As a vanilla deployment as a server with a process manager or with Node
+2. Running in a Docker container in an environment that supports Docker runtime
+3. In a Kubernetes cluster inside a Pod
+
+All the configurations have been put in place for this application to run in a predictable manner.
+
+Only a few things you will need to do:
+
+1. Set environment variables in your environment as specified in the [.env.example](./.env.example)
+2. Ensure that DB migrations are run before application start
+   
+   + If running in a vanilla Node JS environment, you can use the npm scripts provided to run migrations
+   + If running in a Docker runtime supported environment, you can use the [Dockerfile.migrations](./Dockerfile.migrations) file to build an image specifically for running DB migrations. This will run & exist successfully
+   + If running in a Kubernetes supported environment using Deployments, the templates specified in the [k8s](./k8s) folder will give a hint on how to enable these migrations to run before application start using [init containers](https://kubernetes.io/docs/concepts/workloads/pods/init-containers/)
+
+And that should be it to get you a working running API with GraphQL.
+
+## Built with:
+
+1. [TypeScript](https://www.typescriptlang.org/)
+2. [Apollo Server](https://www.apollographql.com/)
+3. [Prisma](https://www.prisma.io/)
+4. [Jest](https://jestjs.io/)

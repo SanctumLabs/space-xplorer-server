@@ -17,7 +17,8 @@
     "migrate:down": "prisma migrate down --experimental",
     "start": "npm-run-all --parallel watch:build watch:server",
     "serve": "node build/server.js",
-    "pm2": "pm2-runtime build/server.js",
+    "pm2:prod": "pm2-runtime start ecosystem.config.js --only SpaceXplorerApi",
+    "pm2:dev": "pm2-runtime start ecosystem.config.js --only SpaceXplorerApi-Dev",
     "test": "jest --runInBand",
     "test:coverage": "npm run test -- --coverage",
     "test:watch": "jest --watch",
@@ -37,7 +38,6 @@
   "devDependencies": {
     "@commitlint/cli": "^9.1.1",
     "@commitlint/config-conventional": "^9.1.1",
-    "@prisma/cli": "^2.4.1",
     "@types/jest": "^26.0.8",
     "@types/node": "^14.0.27",
     "@types/uuid": "^8.0.1",
@@ -69,6 +69,7 @@
     "webpack-shell-plugin": "^0.5.0"
   },
   "dependencies": {
+    "@prisma/cli": "^2.4.1",
     "@prisma/client": "^2.4.1",
     "apollo-datasource": "^0.7.2",
     "apollo-datasource-rest": "^0.9.3",

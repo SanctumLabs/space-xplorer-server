@@ -22,4 +22,4 @@ RUN npm install pm2 -g
 # EXPOSE 4000
 
 # command to run within the container
-CMD [ "pm2-runtime", "start", "ecosystem.config.js" ]
+CMD [ "pm2-runtime", "start", "ecosystem.config.js", "--only", "SpaceXplorerApi" ]

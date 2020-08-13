@@ -5,6 +5,7 @@ build:
     worker: Dockerfile.migrations
   config:
     NODE_ENV: production
+    PORT: 4000
 release:
   image: worker
 run:
