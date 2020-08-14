@@ -1,0 +1,34 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "allowJs": true,
+        "esModuleInterop": true,
+        "target": "ESNext",
+        "noImplicitAny": true,
+        "moduleResolution": "node",
+        "sourceMap": true,
+        "outDir": "build",
+        "baseUrl": "src",
+        "paths": {
+            "@app": ["app.ts"],
+            "@config": ["config.ts"],
+            "@launchApi": ["data/api/LaunchApi.ts"],
+            "@userRepo": ["data/db/UserRepository.ts"],
+            "@core/*": ["core/*"],
+            "@utils": ["utils.ts"],
+            "@gql/*": ["gql/*"],
+            "@launchResolver": ["gql/launch/launchResolver.ts"],
+            "@missionResolver": ["gql/mission/missionResolver.ts"],
+            "@mutationResolver": ["gql/mutation/mutationResolver.ts"],
+            "@queryResolver": ["gql/query/queryResolver.ts"],
+            "@userResolver": ["gql/user/userResolver.ts"],
+            "@logger": ["core/logger.ts"],
+            "@cache": ["core/cache.ts"],
+            "@context": ["core/context.ts"]
+        }
+    },
+    "include": [
+        "src/**/*"
+    ],
+    "exclude": ["node_modules", "build", "dist",".vscode"]
+}

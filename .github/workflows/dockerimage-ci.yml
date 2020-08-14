@@ -1,0 +1,35 @@
+# Reference:https://github.com/marketplace/actions/build-and-push-docker-images
+name: Space Xplorer Docker build
+
+on:
+  push:
+    branches: [ main, beta, develop ]
+
+jobs:
+  push_to_registries:
+    name: Pushes Docker image to Github Registry
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Push Migrations Image to GitHub Packages
+        uses: docker/build-push-action@v1
+        with:
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+          registry: docker.pkg.github.com
+          repository: wyvarn/space-xplorer-server/space-xplorer-migrations
+          dockerfile: "Dockerfile.migrations"
+          tag_with_ref: true
+
+      - name: Push API Image to GitHub Packages
+        uses: docker/build-push-action@v1
+        with:
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+          registry: docker.pkg.github.com
+          repository: wyvarn/space-xplorer-server/space-xplorer-api
+          dockerfile: "Dockerfile"
+          tag_with_ref: true

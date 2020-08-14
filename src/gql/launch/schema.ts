@@ -1,0 +1,25 @@
+export default `
+  type Launch {
+    id: ID!
+    site: String
+    mission: Mission
+    rocket: Rocket
+    isBooked: Boolean!
+  }
+  
+  type Rocket {
+    id: ID!
+    name: String!
+    type: String
+  }
+  
+  type Mission {
+    name: String
+    missionPatch(size: PatchSize): String
+  }
+
+  enum PatchSize {
+    SMALL
+    LARGE
+  }
+`;
