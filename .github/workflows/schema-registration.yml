@@ -17,6 +17,6 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 13
-      - run: npx apollo service:push --graph=space-xplorer --key=$APOLLO_KEY --localSchemaFile=./src/gql/schema.graphql
+      - run: npx apollo service:push --graph=space-xplorer-graph --key=$APOLLO_KEY --localSchemaFile=./src/gql/schema.graphql
         env:
           APOLLO_KEY: ${{ secrets.APOLLO_KEY }}
