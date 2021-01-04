@@ -1111,9 +1111,9 @@
     form-data "^3.0.0"
 
 "@types/node@*", "@types/node@^14.0.27":
-  version "14.14.16"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.14.16.tgz#3cc351f8d48101deadfed4c9e4f116048d437b4b"
-  integrity sha512-naXYePhweTi+BMv11TgioE2/FXU4fSl29HAH1ffxVciNsH3rYXjNP2yM8wqmSm7jS20gM8TIklKiTen+1iVncw==
+  version "14.14.19"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.14.19.tgz#5135176a8330b88ece4e9ab1fdcfc0a545b4bab4"
+  integrity sha512-4nhBPStMK04rruRVtVc6cDqhu7S9GZai0fpXgPXrFpcPX6Xul8xnrjSdGB4KPBVYG/R5+fXWdCM8qBoiULWGPQ==
 
 "@types/node@^10.1.0":
   version "10.17.28"
@@ -1696,13 +1696,6 @@ apollo-reporting-protobuf@^0.6.2:
   dependencies:
     "@apollo/protobufjs" "^1.0.3"
 
-apollo-reporting-protobuf@^0.6.2:
-  version "0.6.2"
-  resolved "https://registry.yarnpkg.com/apollo-reporting-protobuf/-/apollo-reporting-protobuf-0.6.2.tgz#5572866be9b77f133916532b10e15fbaa4158304"
-  integrity sha512-WJTJxLM+MRHNUxt1RTl4zD0HrLdH44F2mDzMweBj1yHL0kSt8I1WwoiF/wiGVSpnG48LZrBegCaOJeuVbJTbtw==
-  dependencies:
-    "@apollo/protobufjs" "^1.0.3"
-
 apollo-server-cache-memcached@^0.6.6:
   version "0.6.6"
   resolved "https://registry.yarnpkg.com/apollo-server-cache-memcached/-/apollo-server-cache-memcached-0.6.6.tgz#2ed60d71d7644de842da68af9f9003683b4ca608"
@@ -1729,7 +1722,7 @@ apollo-server-caching@^0.5.2:
   dependencies:
     lru-cache "^5.0.0"
 
-apollo-server-core@^2.19.0, apollo-server-core@^2.19.1:
+apollo-server-core@^2.19.1:
   version "2.19.1"
   resolved "https://registry.yarnpkg.com/apollo-server-core/-/apollo-server-core-2.19.1.tgz#18cb74004297fe61689862b8faf00b30a5a30ce7"
   integrity sha512-5EVmcY8Ij7Ywwu+Ze4VaUhZBcxl8t5ztcSatJrKMd4HYlEHyaNGBV2itfpyqAthxfdMbGKqlpeCHmTGSqDcNpA==
@@ -1810,15 +1803,6 @@ apollo-server-testing@^2.16.1:
   integrity sha512-8jj2F/iIEUmOupAyAvqZrtV5aQlaXHoCxG5W9fs/ohsC+RG/4TbdA8pvPSLjH8vibpyqt6Fkl2DDbJrCPzvobQ==
   dependencies:
     apollo-server-core "^2.19.1"
-
-apollo-server-types@^0.6.2:
-  version "0.6.2"
-  resolved "https://registry.yarnpkg.com/apollo-server-types/-/apollo-server-types-0.6.2.tgz#3e97d26c580c5e4bd1cc50dbfe9d2ac26b812ab5"
-  integrity sha512-LgSKgAStiDzpUSLYwJoAmy0W8nkxx/ExMmgEPgEYVi6dKPkUmtu561J970PhGdYH+D79ke3g87D+plkUkgfnlQ==
-  dependencies:
-    apollo-reporting-protobuf "^0.6.2"
-    apollo-server-caching "^0.5.2"
-    apollo-server-env "^2.4.5"
 
 apollo-server-types@^0.6.2:
   version "0.6.2"
