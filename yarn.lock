@@ -1714,12 +1714,12 @@ apollo-server-cache-memcached@^0.6.6:
     memcached "^2.2.2"
 
 apollo-server-cache-redis@^1.2.2:
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/apollo-server-cache-redis/-/apollo-server-cache-redis-1.2.2.tgz#0d643d675dfa667b1b91207c7f6819e05afc8d1e"
-  integrity sha512-PBfuiYxVxvZrI19Ni9rGHjYorpntq2I6BTioViknumzia7VMVjp8FD3121eCa+cRN11Hh0UUiBwQuPWK8uFYrw==
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/apollo-server-cache-redis/-/apollo-server-cache-redis-1.2.3.tgz#cdc19624d0370f623df7e1d726bd0e5b544bef95"
+  integrity sha512-e81tYrK2tUJYmVa0lPsBazoNeLXvRPkFhrIwOfH1DeCGKcHOF7/loXH+AXm6eVQ9v5l271gsDKU3dtV1EuNd3w==
   dependencies:
-    apollo-server-caching "^0.5.2"
-    apollo-server-env "^2.4.5"
+    apollo-server-caching "^0.5.3"
+    apollo-server-env "^3.0.0"
     dataloader "^2.0.0"
     ioredis "^4.0.0"
 
