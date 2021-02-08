@@ -3,7 +3,7 @@
   "private": false,
   "description": "Space Xplorer API",
   "main": "server.js",
-  "version": "1.0.30",
+  "version": "1.0.31",
   "repository": "git@github.com:Wyvarn/space-xplorer-server.git",
   "author": "BrianLusina <12752833+BrianLusina@users.noreply.github.com>",
   "license": "MIT",
