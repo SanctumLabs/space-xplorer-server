@@ -766,9 +766,9 @@
     debug "^4.1.1"
 
 "@prisma/cli@^2.4.1":
-  version "2.20.0"
-  resolved "https://registry.yarnpkg.com/@prisma/cli/-/cli-2.20.0.tgz#8d255341a23a479121fd09d45948c1b25e62df91"
-  integrity sha512-5iCa2urPVdy7nG0Lslg+c3CxTg/tFcybONY1VA5RZZPSQAbirEp0zHw5zKnKvjcDD/iZlfnobiZkjuB8Em1JuA==
+  version "2.20.1"
+  resolved "https://registry.yarnpkg.com/@prisma/cli/-/cli-2.20.1.tgz#878329b24c3aac795a92edf5ad73d86c230336c5"
+  integrity sha512-/yrNDyNXLETPre/pgXG/L9zER2nINiq+Eq8pALSCApiHZBW1QrksxL9fbbxaseoW6HBs0T4UQWemu378O2mUOw==
   dependencies:
     "@prisma/engines" "2.20.0-26.60ba6551f29b17d7d6ce479e5733c70d9c00860e"
 
