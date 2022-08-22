@@ -1763,12 +1763,12 @@ apollo-server-cache-memcached@^0.6.6:
     memcached "^2.2.2"
 
 apollo-server-cache-redis@^1.2.2:
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/apollo-server-cache-redis/-/apollo-server-cache-redis-1.5.0.tgz#7520cd8beadff46f4802a90770e30784485b82b2"
-  integrity sha512-A8ZyHTU8wiJOYINNqyIQSbvif0VW7FL9izhiEL4Sh62ZzoG3nwrhzCS2HUh5WwNw6flyEhvSKRCl9DNA6XnFLA==
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/apollo-server-cache-redis/-/apollo-server-cache-redis-1.6.0.tgz#b5bc9f69f2ce0d30af3f432737d45163f40d6944"
+  integrity sha512-kP9vWf4IoqjXs4JcthQQeyJZ57c16W6yjs0ESlmzjGey/7xkoVFznIbUDAd4a12yJhhdkXMkxyQLNv0Axt4PvQ==
   dependencies:
     apollo-server-caching "^0.7.0"
-    apollo-server-env "^3.1.0"
+    apollo-server-env "^3.2.0"
     dataloader "^2.0.0"
     ioredis "^4.0.0"
 
@@ -1817,10 +1817,10 @@ apollo-server-core@^2.25.3, apollo-server-core@^2.25.4:
     subscriptions-transport-ws "^0.9.19"
     uuid "^8.0.0"
 
-apollo-server-env@^3.0.0, apollo-server-env@^3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/apollo-server-env/-/apollo-server-env-3.1.0.tgz#0733c2ef50aea596cc90cf40a53f6ea2ad402cd0"
-  integrity sha512-iGdZgEOAuVop3vb0F2J3+kaBVi4caMoxefHosxmgzAbbSpvWehB8Y1QiSyyMeouYC38XNVk5wnZl+jdGSsWsIQ==
+apollo-server-env@^3.0.0, apollo-server-env@^3.1.0, apollo-server-env@^3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/apollo-server-env/-/apollo-server-env-3.2.0.tgz#0572e307da4784c5d7633a0ade1f45e231da28e3"
+  integrity sha512-V+kO5e6vUo2JwqV1/Ng71ZE3J6x1hCOC+nID2/++bCYl0/fPY9iLChbBNSgN/uoFcjhgmBchOv+m4o0Nie/TFQ==
   dependencies:
     node-fetch "^2.6.1"
     util.promisify "^1.0.0"
